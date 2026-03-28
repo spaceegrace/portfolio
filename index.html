@@ -1,28 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grace Amos Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333;}
+    header { background:#4f46e5; color:white; text-align:center; padding:60px 20px;}
+    header h1 { margin:0; font-size:3em;}
+    header p { margin:10px 0 0; font-size:1.2em;}
+    section { max-width:900px; margin:50px auto; padding:0 20px;}
+    h2 { color:#4f46e5; margin-bottom:20px;}
+    .projects { display:flex; flex-wrap:wrap; gap:20px;}
+    .project { background:white; border-radius:12px; padding:20px; flex:1 1 300px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+    .project img { width:100%; border-radius:8px;}
+    .project a.button { display:inline-block; margin-top:10px; padding:10px 20px; background:#4f46e5; color:white; border-radius:6px; text-decoration:none;}
+    footer { text-align:center; padding:30px; font-size:0.9em; color:#777;}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <p>This is a brief introduction about myself.</p>
-    </section>
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-        </ul>
-    </section>
-    <footer>
-        <p>Contact me at: email@example.com</p>
-    </footer>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Grace Amos</h1>
+    <p>Computer Science & Game Developer | Interactive Storytelling Enthusiast</p>
+  </header>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Grace, a computer science student with a passion for interactive storytelling and game development. I build projects that combine creativity, coding, and immersive experiences.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      
+      <!-- Nirvana Quest -->
+      <div class="project">
+        <img src="images/nirvana-screenshot.png" alt="Nirvana Quest Screenshot">
+        <h3>Nirvana Quest</h3>
+        <p>A text adventure game based on the Noble Eightfold Path of Buddhism. Collect all 8 practices to achieve Nirvana. Built with HTML, CSS, and JavaScript.</p>
+        <a href="https://spaceegrace.github.io/portfolio/games/text-game/" target="_blank" class="button">Play Now</a>
+      </div>
+
+      <!-- Future Project Template -->
+      <div class="project">
+        <img src="images/project2-screenshot.png" alt="Project 2 Screenshot">
+        <h3>Project Name</h3>
+        <p>Brief description of the project, tools used, and highlights.</p>
+        <a href="#" target="_blank" class="button">View Project</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>HTML, CSS, JavaScript, Python, Git/GitHub, Game Design, Interactive Storytelling</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: grace@example.com | <a href="https://github.com/spaceegrace" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    &copy; 2026 Grace Amos. All rights reserved.
+  </footer>
+
 </body>
 </html>
