@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirvana Text Adventure Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #00ff00;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #game-container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #00cc00;
+            font-style: italic;
+        }
+
+        #start-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 30px;
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #start-btn:hover {
+            background-color: #00cc00;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        #output {
+            background-color: #000;
+            border: 1px solid #00ff00;
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
+            border-radius: 5px;
+        }
+
+        #output::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #output::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        #output::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 4px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        #input {
+            flex: 1;
+            background-color: #000;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+
+        #input:focus {
+            outline: none;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        #input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .hint {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #00cc00;
+            text-align: center;
+        }
+
+        #play-again-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #play-again-btn:hover {
+            background-color: #00cc00;
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>🧘 Nirvana Quest</h1>
+        <div class="subtitle">A Text Adventure Game</div>
+
+        <button id="start-btn">Start Game</button>
+
+        <div id="output"></div>
+
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="input" 
+                placeholder="Enter direction (North, South, East, West) or Exit..." 
+                disabled
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="hint">
+            💡 Tip: Navigate through rooms to collect all 8 practices and reach Nirvana!
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
