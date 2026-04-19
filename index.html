@@ -17,6 +17,10 @@
         }
 
         * { box-sizing: border-box; }
+        
+        /* Smooth scrolling effect */
+        html { scroll-behavior: smooth; }
+
         body { 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
@@ -25,6 +29,7 @@
             line-height: 1.6;
         }
 
+        /* Sticky Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -38,9 +43,17 @@
             z-index: 1000;
         }
 
+        .logo { 
+            text-decoration: none; 
+            font-weight: 800; 
+            font-size: 1.2rem; 
+            color: var(--primary); 
+        }
+
         nav a { text-decoration: none; color: var(--text-main); font-weight: 600; margin-left: 20px; font-size: 0.9rem; }
         nav a:hover { color: var(--primary); }
 
+        /* Hero Section */
         header { 
             padding: 100px 20px; 
             text-align: center;
@@ -52,8 +65,17 @@
         header p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 20px auto 0; }
 
         section { max-width: 1000px; margin: 80px auto; padding: 0 24px; }
-        h2 { font-size: 2rem; font-weight: 700; color: var(--text-main); margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 15px; }
+        
+        h2 { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            color: var(--text-main); 
+            margin-bottom: 2rem; 
+            border-left: 4px solid var(--primary); 
+            padding-left: 15px; 
+        }
 
+        /* Project Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         
         .project-card { 
@@ -68,21 +90,16 @@
 
         .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
 
-        /* Improved Video Styling */
         .video-container { 
             width: 100%; 
             border-radius: 12px; 
             overflow: hidden; 
             margin: 20px 0;
             background: #000;
-            line-height: 0; /* Removes tiny gap at bottom of video */
+            line-height: 0;
         }
 
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        video { width: 100%; height: auto; display: block; }
 
         .project-card h3 { margin: 0 0 10px; font-size: 1.5rem; }
         .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0; }
@@ -112,7 +129,7 @@
 <body>
 
     <nav>
-        <div style="font-weight: 800; font-size: 1.2rem; color: var(--primary);">GA</div>
+        <a href="#top" class="logo">GA</a>
         <div>
             <a href="#about">About</a>
             <a href="#projects">Work</a>
@@ -121,7 +138,7 @@
         </div>
     </nav>
 
-    <header>
+    <header id="top">
         <h1>Grace Amos</h1>
         <p>Computer Science Student & Game Developer crafting immersive interactive stories.</p>
     </header>
@@ -149,15 +166,16 @@
                     A narrative-driven text adventure exploring the Noble Eightfold Path. Players must 
                     master 8 practices to reach the final state.
                 </p>
-                <!-- Cleaned up Video Section -->
                 <div class="video-container">
-                    <video controls preload="metadata" poster="Screenshot 2026-04-19 032014.png" 
-                           onmouseover="this.play()" onmouseout="this.pause()" muted>
+                    <video controls preload="metadata" 
+                           poster="Screenshot 2026-04-19 032014.png" 
+                           onmouseover="this.play()" 
+                           onmouseout="this.pause()" muted>
                         <source src="nirvana play lose.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <a href="https://spaceegrace.github.io/portfolio/games/text-game/" class="btn" target="_blank">Play Game →</a>
+                <a href="https://github.io" class="btn" target="_blank">Play Game →</a>
             </div>
         </div>
     </section>
@@ -184,14 +202,14 @@
         </div>
     </section>
 
-        <section id="contact">
+    <section id="contact">
         <h2>Get In Touch</h2>
-        <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: var(--card-shadow);">
-            <p style="font-size: 1.1rem; margin-top: 0;"><center>Looking for a developer who understands story? Let's connect.</p>
+        <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: var(--card-shadow); text-align: center;">
+            <p style="font-size: 1.1rem; margin-top: 0;">Looking for a developer who understands story? Let's connect.</p>
             <p><strong>Email:</strong> <a href="mailto:graceeamos@gmail.com" style="color: var(--primary); text-decoration: none;">graceeamos@gmail.com</a></p>
             <div style="margin-top: 20px;">
-                <a href="https://github.com/spaceegrace" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">GitHub Profile →</center></a>
-           </div>
+                <a href="https://github.com" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">GitHub Profile →</a>
+            </div>
         </div>
     </section>
 
