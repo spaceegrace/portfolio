@@ -6,7 +6,6 @@ Welcome to the Nirvana Text Adventure Game! This is an interactive text-based ga
 - [Introduction](#introduction)
 - [Gameplay](#gameplay)
 - [Installation](#installation)
-- [How to Play](#how-to-play)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -24,14 +23,6 @@ To play the Nirvana Text Adventure Game, clone the repository and navigate to th
 git clone https://github.com/spaceegrace/portfolio.git
 cd portfolio/games/text-game
 ```
-
-## How to Play
-To start the game, run the main script:
-```bash
-python main.py
-```
-
-Follow the on-screen instructions to enjoy your adventure!
 
 ## Contributing
 If you wish to contribute, please fork the repository and submit a pull request. Contributions are welcome!
