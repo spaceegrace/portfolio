@@ -1,79 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace Amos Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333;}
-    header { background:#4f46e5; color:white; text-align:center; padding:60px 20px;}
-    header h1 { margin:0; font-size:3em;}
-    header p { margin:10px 0 0; font-size:1.2em;}
-    section { max-width:900px; margin:50px auto; padding:0 20px;}
-    h2 { color:#4f46e5; margin-bottom:20px;}
-      .project {
-            overflow: hidden;
-            margin: 10px 0;
-      }
-        iframe {
-            height: 150px;
-            width: 100%;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Amos | Game Developer & CS Student</title>
+    <!-- Modern Sans Serif: Inter for UI clarity -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5; /* Professional Indigo */
+            --primary-hover: #4338ca;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
-    .projects { display:flex; flex-wrap:wrap; gap:20px;}
-    .project { background:white; border-radius:12px; padding:20px; flex:1 1 300px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-    .project img { width:100%; border-radius:8px;}
-    .project a.button { display:inline-block; margin-top:10px; padding:10px 20px; background:#4f46e5; color:white; border-radius:6px; text-decoration:none;}
-    footer { text-align:center; padding:30px; font-size:0.9em; color:#777;}
-  </style>
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg-light); 
+            color: var(--text-main); 
+            line-height: 1.6;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; margin-left: 20px; font-size: 0.9rem; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        header { 
+            padding: 100px 20px; 
+            text-align: center;
+            background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+            color: white;
+        }
+
+        header h1 { font-size: 3.5rem; margin: 0; font-weight: 800; letter-spacing: -0.025em; }
+        header p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 20px auto 0; }
+
+        section { max-width: 1000px; margin: 80px auto; padding: 0 24px; }
+        h2 { font-size: 2rem; font-weight: 700; color: var(--text-main); margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 15px; }
+
+        /* Project Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        
+        .project-card { 
+            background: white; 
+            border-radius: 16px; 
+            padding: 24px; 
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+
+        .iframe-container { 
+            position: relative; 
+            width: 100%; 
+            height: 220px; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            margin: 20px 0;
+            background: #eee;
+        }
+
+        .project-card h3 { margin: 0 0 10px; font-size: 1.5rem; }
+        .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0; }
+        .tag { background: #eef2ff; color: var(--primary); padding: 4px 12px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: var(--primary-hover); }
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #e2e8f0; color: var(--text-muted); font-size: 0.875rem; }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 2.5rem; }
+            section { margin: 50px auto; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>Grace Amos</h1>
-    <p>Computer Science & Game Developer | Interactive Storytelling Enthusiast</p>
-  </header>
+    <nav>
+        <div style="font-weight: 800; font-size: 1.2rem; color: var(--primary);">GA</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-  <!-- About Me -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Grace, a computer science student with a passion for interactive storytelling and game development. I build projects that combine creativity, coding, and immersive experiences.</p>
-  </section>
+    <header>
+        <h1>Grace Amos</h1>
+        <p>Computer Science Student & Game Developer crafting immersive interactive stories.</p>
+    </header>
 
-  <!-- Projects -->
-  <section id="projects" width="700" height="400">
-    <h2>Projects</h2>
-    <div class="projects">
-      
-      <!-- Nirvana Quest -->
-      <div class="project">
-        <h3>Nirvana Quest</h3>
-        <p>A text adventure game based on the Noble Eightfold Path of Buddhism. Collect all 8 practices to achieve Nirvana. Built with HTML, CSS, and JavaScript.</p>
-        <center><iframe src="https://spaceegrace.github.io/portfolio/games/text-game/" 
-        width="350" height="200" style="border:1px solid #ccc;"></center>
-        </iframe>
-      </div>
+    <section id="about">
+        <h2>The Story So Far</h2>
+        <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px;">
+            I specialize in bridging the gap between narrative art and technical implementation. 
+            Currently exploring the intersection of web technology and game mechanics to create 
+            meaningful digital experiences.
+        </p>
+    </section>
 
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Nirvana Quest</h3>
+                <div class="tag-list">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Game Design</span>
+                    <span class="tag">HTML/CSS</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">
+                    A narrative-driven text adventure exploring the Noble Eightfold Path. Players must 
+                    master 8 practices to reach the final state.
+                </p>
+                <div class="iframe-container">
+                    <iframe src="https://github.io" 
+                            width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+                <a href="https://github.com" class="btn" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
 
-    </div>
-  </section>
+    <section id="skills">
+        <h2>Expertise</h2>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+            <div>
+                <h4 style="margin-bottom: 10px;">Development</h4>
+                <ul style="color: var(--text-muted); padding-left: 20px;">
+                    <li>Python & C++</li>
+                    <li>HTML/CSS/JS</li>
+                    <li>Git/GitHub</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 10px;">Design</h4>
+                <ul style="color: var(--text-muted); padding-left: 20px;">
+                    <li>Game Mechanics</li>
+                    <li>Interactive Storytelling</li>
+                    <li>UI/UX Prototyping</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>HTML, CSS, JavaScript, Python, Git/GitHub, Game Design, Interactive Storytelling</p>
-  </section>
+    <section id="contact" style="text-align: center; background: white; padding: 60px; border-radius: 20px; box-shadow: var(--card-shadow);">
+        <h2>Get In Touch</h2>
+        <p>Looking for a developer who understands story? Let's connect.</p>
+        <p><strong>graceeamos@gmail.com</strong></p>
+        <div style="margin-top: 20px;">
+            <a href="https://github.com" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">GitHub Profile →</a>
+        </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: graceeamos@gmail.com | <a href="https://github.com/spaceegrace" target="_blank">GitHub</a></p>
-  </section>
-
-  <footer>
-    &copy; 2026 Grace Amos. All rights reserved.
-  </footer>
+    <footer>
+        &copy; 2026 Grace Amos. Built for the future of interactive web.
+    </footer>
 
 </body>
 </html>
